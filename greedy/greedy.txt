@@ -1,0 +1,7 @@
+-> Activity Selection
+-> Fractional Knapsack
+-> Job Sequencing
+-> Prims n Kruskals Algorithm for MST
+-> Dijkstras Algorithm
+-> Huffman Coding
+-> Travelling Salesmen Problem (NP Hard)
