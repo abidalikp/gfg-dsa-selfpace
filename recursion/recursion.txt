@@ -1,0 +1,11 @@
+Applications:
+    Dynamic Programming
+    Backtracking
+    Divide and Conquer:
+        Binary Search
+        Merge Sort
+        Quick Sort
+    Tower of Hanoi
+    Traversal:
+        DFS on Graph
+        Inorder, Preorder, Postorder on Tree
