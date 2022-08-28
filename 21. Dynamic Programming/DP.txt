@@ -1,0 +1,12 @@
+-> Optimization over plain recursion
+-> Use solution of subproblems when there is overlapping subproblems
+
+1 -> Memoisation (Top Down)
+2 -> Tabulation (Bottom Up)
+
+Applications:
+    Bellman-Ford Algorithm (SP)
+    Floyd-Warshal Algorithm (SP)
+    Diff Utility (LCS)
+    Search Close Words (Edit Distance)
+    Resource Allocation (0-1 Knapsack)
