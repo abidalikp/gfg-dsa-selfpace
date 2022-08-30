@@ -1,0 +1,5 @@
+-> Minimum deletions to make array sorted.
+-> Maximum sum in increasing subsequence.
+-> Maximum length bitonic subsequence.
+-> Building Bridges.
+-> Longest chain of pairs.
