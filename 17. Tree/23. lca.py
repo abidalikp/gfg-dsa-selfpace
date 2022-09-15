@@ -1,35 +1,44 @@
 class Node:
-    def __init__(self, val=None):
-        self.data = val
+    def __init__(self, data):
+        self.data = data
         self.left = None
         self.right = None
 
-def lca(root, n1, n2):
+def find(root, x, path):
+    if not root: return False
+    path.append(root.data)
+    if root.data == x: return True
+    if find(root.left, x, path) or find(root.right, x, path): return True
+    path.pop()
+    return False
+
+def LCA(root, n1, n2):
+    p1 = []
+    p2 = []
+    if find(root, n1, p1) and find(root, n2, p2):
+        l = min(len(p1), len(p2))
+        for i in range(l-1):
+            if p1[i+1] != p2[i+1]: return p1[i]
+    else: return None
+
+def LCA2(root, n1, n2):
     if not root: return None
     if root.data == n1 or root.data == n2: return root
-    L = lca(root.left, n1, n2)
-    R = lca(root.right, n1, n2)
-    if L and R:
-        return root
-    if L:
-        return L
-    else:
-        return R
-    
+    lca1 = LCA2(root.left, n1, n2)
+    lca2 = LCA2(root.right, n1, n2)
+    if lca1 and lca2: return root
+    return lca1 if lca1 else lca2 
+
 #main:
 
-root = Node(10)
-root.left = Node(20)
-root.right = Node(30)
-root.left.left = Node(40)
-root.left.right = Node(50)
-root.right.left = Node(60)
-root.right.right = Node(70)
-root.left.left.left = Node(80)
-root.left.left.left.left = Node(90)
+head = Node(10)
+head.left = Node(20)
+head.right = Node(30)
+head.right.left = Node(40)
+head.right.right = Node(50)
 
-n1, n2 = 80, 90
+res = LCA(head, 20, 30)
+res2 = LCA2(head, 20, 30)
 
-ans = lca(root, n1, n2)
-
-print(ans.data)
+print(res)
+print(res2.data)
